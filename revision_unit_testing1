@@ -5,10 +5,13 @@ def rand():
     return x
 nums = rand()    
 def compare(num1,num2):
+#///////////////////////////
+#    UNIT TESTING
     if num2.isalnum():
         print("Users input is a digit")
     else:
         print("Users input is not a digit")
+#//////////////////////////
     if num1 == num2:
         return True
     else:
