@@ -1,12 +1,16 @@
 import random
 def rand():
     x = random.randint(1,10)
-    y = random.randint(1,10)
-    return x,y
+    return x
 nums = rand()    
-def compare(nums):
-    if nums[0] == nums[1]:
+def compare(num1,num2):
+    if num1 == num2:
         return True
     else:
         return False
-compare(nums)    
+
+answer = False
+while answer != True:
+    guess = int(input("Guess the number"))
+    answer = compare(nums, guess)
+print("YOU WIN!")    
