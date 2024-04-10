@@ -1,6 +1,6 @@
 word = ""
 
-def symmet(wl,leng):
+def symmet(wl,leng): 
     div = leng/2
     for i in range(int(div)):
         if wl[i] != wl[int(i-div-1)]:
