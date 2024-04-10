@@ -1,0 +1,38 @@
+word = ""
+
+def symmet(wl,leng):
+    div = leng/2
+    for i in range(int(div)):
+        if wl[i] != wl[int(i-div-1)]:
+            return "string is not symmetrical"
+    return "string is symmetrical"
+
+def palin(wl):
+    wl2 = list(reversed(wl))
+    if wl == wl2:
+        return "string is a palindrome"
+    else:
+        return "string is not a palindrome"
+while word != "-1":
+    word = input("Enter a word")
+    #/////////// UNIT TESTING
+    if not(word.isalpha()):
+        word = "-1"
+        break
+    #///////////
+    word_list2 = list(word)
+    word_list=[]
+    
+    for i in word_list2:
+        i = i.lower()
+        word_list.append(i)
+    leng = len(word_list)
+    
+    if leng == 1:
+        print("string is symmetrical and a palindrome")
+    elif leng % 2 == 0:
+        print(symmet(word_list,leng))
+        print(palin(word_list))
+    else:
+        print("string is not symmetrical")
+        print(palin(word_list))
