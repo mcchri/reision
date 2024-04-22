@@ -8,7 +8,8 @@ def new_user_ID(uids):
             ok += 1
             uids.append(new_id)
             return uids,new_id
-        
+f = open("IDs.csv",'w')
+f.write("ID,password")
 def new_password():
         special_list=["!","£","$","%","&","<","*","@"]
         score_list = [0,0,0,0,0]
@@ -58,11 +59,11 @@ def GUI():
                 elif score == 5:
                     print("You have a strong password")
                     correct = True
-            f = open("IDs.csv",'w')
+            f = open("IDs.csv",'a')
             user_ID = user_ID + ","
-            string_com = user_ID + lis_pass[1]
+            string_com = user_ID + lis_pass[1] + ","
             f.write(string_com)
-            f.close()
+            
             
         elif selct == 2:
             change_id = input("Enter the existing ID that you want to change the password: ")
@@ -73,13 +74,16 @@ def GUI():
                     lis_pass = new_password()
                     f = ''.replace(x[1],lis_pass[1])
             f = open("IDs.csv",'r')
-            f.close()
+            
             
         elif selct == 3:
             f = open("IDs.csv",'r')
             for line in f:
-                x=line.split(",")
-                print(x[0])
+                list_id = line.split(",")
+            count =0    
+            for i in range(0,len(list_id),2):
+                print(list_id[i])
         else:
             ok+=1
+        f.close()    
 GUI()
